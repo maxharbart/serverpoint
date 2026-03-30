@@ -1,5 +1,7 @@
 FROM golang:1.23-alpine AS builder
 
+ENV GOPROXY=https://proxy.golang.org,direct
+
 WORKDIR /app
 
 COPY go.mod ./
