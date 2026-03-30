@@ -9,9 +9,7 @@ COPY . .
 
 RUN go mod tidy && CGO_ENABLED=0 go build -o serverpoint .
 
-FROM alpine:3.19
-
-RUN apk add --no-cache ca-certificates
+FROM alpine:3.20
 
 WORKDIR /app
 
