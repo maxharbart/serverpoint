@@ -40,7 +40,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      BACKEND_URL: http://backend:8080
+      BACKEND_URL: http://host.docker.internal:8081
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - backend
     restart: unless-stopped
