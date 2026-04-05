@@ -37,6 +37,8 @@ services:
     build:
       context: ./frontend
       network: host
+      args:
+        BACKEND_URL: http://host.docker.internal:8081
     ports:
       - "3000:3000"
     environment:
